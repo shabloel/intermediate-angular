@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h4 class="mt-3">Intermediate part</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-md-offset-2">
+      <ul class="navbar mr-auto navbar-dark bg-dark">
+        <li
+          routerLinkActive="active"
+          class="nav-item active"
+        >
+          <a class="nav-link text-light" routerLink="/services">Services</a>
+        </li>
+        <li
+          routerLinkActive="active"
+          class="nav-item active"
+        >
+          <a class="nav-link text-light" routerLink="/routing" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Routing</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

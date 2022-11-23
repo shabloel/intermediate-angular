@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>Account holder</h4>
+      <form>
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="{{ currentlySelectedUser.firstName }}"
+              [(ngModel)]="currentlySelectedUser.firstName" [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="{{ currentlySelectedUser.lastName }}"
+              [(ngModel)]="currentlySelectedUser.lastName" [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>Current state: {{ currentlySelectedUser.category }}</p>
+          <div class="col-xs-12 mt-2">
+            <select
+              class="form-control"
+              [(ngModel)]="currentlySelectedUser.category" [ngModelOptions]="{standalone: true}"
+            >
+              <option hidden value="" disabled selected>
+                Select one category
+              </option>
+              <option>Private</option>
+              <option>Business</option>
+              <option>Internal</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+
+      <h4 class="mt-3">Add new account</h4>
+      <form class="mt-2">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Account name"
+                [(ngModel)]="accountName" [ngModelOptions]="{standalone: true}"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Account number"
+                [(ngModel)]="accountNumber" [ngModelOptions]="{standalone: true}"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form class="mt-2">
+        <div class="form-group">
+          <select class="form-control" [(ngModel)]="accountStatus" [ngModelOptions]="{standalone: true}">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+      </form>
+      <button class="btn btn-primary mr-1 mt-2" (click)="onSave()">Save</button>
+      <button class="btn btn-danger ml-2 mt-2" (click)="cancel()">Cancel</button>
+      <button class="btn btn-primary mt-2" (click)="onAddAccount()">Add Account</button>
+
+    </div>
+  </div>
+</div>

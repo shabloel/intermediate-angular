@@ -1,0 +1,40 @@
+<h4 class="text-center">All accounts</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-center">
+      <ul class="list-group w-100 p-3">
+        <li
+          class="list-group-item align-items-center"
+          *ngFor="let user of users"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <p>
+                  <strong>First Name:</strong> {{ user.firstName }}
+                  <strong>Last Name:</strong> {{ user.lastName }}
+                  <strong>Category:</strong> {{ user.category }}
+
+                </p>
+              </div>
+              <div class="col-sm">
+                <button class="btn btn-primary" (click)="onChange(user)">
+                  Change
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4" *ngFor="let account of user.accounts">
+            Account number: {{ account.accountNumber }} &nbsp;&nbsp;&nbsp;
+            Account status: {{ account.status }}
+          </p>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" (click)="addUser()">New user</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
